@@ -14,7 +14,7 @@ const UpdateProduct = () => {
   useEffect(() => {
     const getProduct = async () => {
       let result = await axios.get(
-        `${import.meta.env.VITE_API_URL}/Products/${params.id}`,
+        `${import.meta.env.VITE_API_URL}/products/${params.id}`,
         
         
       );
@@ -42,7 +42,7 @@ const UpdateProduct = () => {
     }
 
     let result = await axios.put(
-      `${import.meta.env.VITE_API_URL}/Products/${params.id}`,
+      `${import.meta.env.VITE_API_URL}/products/${params.id}`,
       updatedData,
       {
         headers: {

@@ -84,7 +84,6 @@ function App() {
       <div className="App">
 
         <RouterProvider router={router} />
-        <h1>E-Dashboard</h1>
 
         <div>
 
