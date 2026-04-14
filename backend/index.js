@@ -14,7 +14,12 @@ const jwtSecretKey = process.env.JWT_SECRET_KEY; // Isko aap apne secret key se 
 
 const app = express();
 // cors middleware use karna padega taki client se aane wale request ko allow kar sake
-app.use(cors());
+
+
+app.use(cors({
+  origin: process.env.FRONTEND_URL || "*",
+  credentials: true
+}));
 
 // jo bhi data client se aayega either from react or postman
 // usko json me convert karne ke liye ye middleware use karna padega
