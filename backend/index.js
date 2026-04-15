@@ -15,11 +15,12 @@ const jwtSecretKey = process.env.JWT_SECRET_KEY; // Isko aap apne secret key se 
 const app = express();
 // cors middleware use karna padega taki client se aane wale request ko allow kar sake
 
-
-app.use(cors({
-  origin: process.env.FRONTEND_URL || "*",
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "https://e-commerce-admin-project.vercel.app/", // Yahan apna exact Vercel URL dalein
+    credentials: true,
+  }),
+);
 
 // jo bhi data client se aayega either from react or postman
 // usko json me convert karne ke liye ye middleware use karna padega
@@ -60,7 +61,7 @@ app.post("/register", async (req, res) => {
 });
 //res.send(result); // Ye line database mein save hone ke baad user ke data ko response ke roop mein bhejti hai.
 
-app.post("/login",  async (req, res) => {
+app.post("/login", async (req, res) => {
   console.log(req.body);
   if (req.body.password && req.body.email) {
     let user = await User.findOne({ email: req.body.email });
