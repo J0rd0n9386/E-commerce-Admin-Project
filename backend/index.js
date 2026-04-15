@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://e-commerce-admin-project.vercel.app/", // Yahan apna exact Vercel URL dalein
+    origin: "https://e-commerce-admin-project.vercel.app", // Yahan apna exact Vercel URL dalein
     credentials: true,
   }),
 );
